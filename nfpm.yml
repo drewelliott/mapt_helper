@@ -10,7 +10,7 @@ vendor: Nokia
 license: BSD 3-Clause
 contents:
   - src: ./mapt_helper
-    dst: /usr/local/bin/mapt_helper
+    dst: /opt/mapt_helper
 
   - src: ./venv
     dst: /opt/mapt_helper/venv

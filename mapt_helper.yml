@@ -4,8 +4,8 @@
 
 mapt_helper:
    path: /usr/local/bin/mapt_helper
-   launch-command: /usr/local/bin/mapt_helper/mapt_helper.sh
-   search-command: /bin/bash /usr/local/bin/mapt_helper/mapt_helper.sh
+   launch-command: /opt/mapt_helper/mapt_helper.sh
+   search-command: /bin/bash /opt/mapt_helper/mapt_helper.sh
    wait-for-config: No
    failure-threshold: 10
    failure-action: wait=forever
