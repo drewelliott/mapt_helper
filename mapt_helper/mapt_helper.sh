@@ -25,9 +25,13 @@ main_module="/usr/local/bin/mapt_helper/mapt_helper.py"
 source "${virtual_env}"
 
 # update PYTHONPATH variable with the agent directory and the SR Linux gRPC
-export PYTHONPATH="$PYTHONPATH:
-_term(){
-    echo "Caught signal SIGTERM !! "
-    # when SIGTERM is caught: kill the child process
-    kill -TERM "$child" 2>/dev/null
-}
+export PYTHONPATH="$PYTHONPATH:/usr/local/bin/mapt_helper:/opt/srlinux/bin:/opt/mapt_helper/venv/lib/python3.11/site-packages"
+
+# start the agent in the background (as a child process)
+python3 ${main_module}
+
+# save its process id
+child=$!
+
+# wait for the child process to finish
+wait "$child"
