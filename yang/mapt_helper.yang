@@ -1,0 +1,39 @@
+module mapt_helper {
+    yang-version 1.1;
+    namespace "urs:srl_ndk/mapt_helper";
+    prefix mapt_helper;
+
+    import srl_nokia-common {
+        prefix srl_nokia-comm;
+    }
+
+    import ietf-yang-types {
+        revision-date 2013-07-15; 
+        prefix yang;
+    }
+    
+    revision 2023-09-21;
+
+    container state {
+        list lease {
+            config false;
+            key "client";
+            leaf client {
+                type string;
+                description "Client ID";
+            }
+            leaf v6-route {
+                type srl_nokia-comm:ipv6-prefix;
+                description "IPv6 static route entry";
+            }
+            leaf lease-time {
+                type yang:timestamp;
+                description "timestamp of initial dhcpv6 relay lease";
+            }
+            leaf renew-time {
+                type yang:timestamp;
+                description "timestamp of latest dhcpv6 lease renew";
+            }
+        }
+    }
+}
