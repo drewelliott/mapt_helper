@@ -18,14 +18,14 @@ trap _term SIGTERM
 
 # set local variables
 virtual_env="/opt/mapt_helper/venv/bin/activate"
-main_module="/usr/local/bin/mapt_helper/mapt_helper.py"
+main_module="/opt/mapt_helper/mapt_helper.py"
 
 # start python virtual environment, which is used to ensure the correct
 # python packages are installed and the correct python version is used
 source "${virtual_env}"
 
 # update PYTHONPATH variable with the agent directory and the SR Linux gRPC
-export PYTHONPATH="$PYTHONPATH:/usr/local/bin/mapt_helper:/opt/srlinux/bin:/opt/mapt_helper/venv/lib/python3.11/site-packages"
+export PYTHONPATH="$PYTHONPATH:/opt/mapt_helper:/opt/srlinux/bin:/opt/mapt_helper/venv/lib/python3.11/site-packages"
 
 # start the agent in the background (as a child process)
 python3 ${main_module}
