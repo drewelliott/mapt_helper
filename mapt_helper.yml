@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 mapt_helper:
-   path: /usr/local/bin/mapt_helper
+   path: /opt/mapt_helper
    launch-command: /opt/mapt_helper/mapt_helper.sh
    search-command: /bin/bash /opt/mapt_helper/mapt_helper.sh
    wait-for-config: No
