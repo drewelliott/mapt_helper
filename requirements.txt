@@ -1,0 +1,8 @@
+# set srlinux-ndk to a desired version if needed
+# https://pypi.org/project/srlinux-ndk/
+srlinux-ndk
+pygnmi==0.6.7
+protobuf==3.19.6
+cryptography==36.0.0
+python-dev-tools
+grpcio-tools==1.11.1
