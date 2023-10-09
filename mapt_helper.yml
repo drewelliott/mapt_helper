@@ -4,8 +4,8 @@
 
 mapt_helper:
    path: /opt/mapt_helper
-   launch-command: /opt/mapt_helper/mapt_helper.sh
-   search-command: /bin/bash /opt/mapt_helper/mapt_helper.sh
+   launch-command: "/usr/bin/bash /opt/mapt_helper/mapt_helper.sh --log-level debug"
+   search-command: ./mapt_helper.sh
    wait-for-config: No
    failure-threshold: 10
    failure-action: wait=forever
@@ -16,4 +16,5 @@ mapt_helper:
       names:
          - "mapt_helper" 
       source-directories:
-         - "/opt/mapt_helper/yang"
+         - '/opt/mapt_helper/yang'
+         - '/opt/srlinux/models'

@@ -25,10 +25,10 @@ main_module="/opt/mapt_helper/mapt_helper.py"
 source "${virtual_env}"
 
 # update PYTHONPATH variable with the agent directory and the SR Linux gRPC
-export PYTHONPATH="$PYTHONPATH:/opt/mapt_helper:/opt/srlinux/bin:/opt/mapt_helper/venv/lib/python3.11/site-packages"
+export PYTHONPATH="$PYTHONPATH:/opt/mapt_helper:/opt/srlinux/bin:/opt/mapt_helper/venv/lib/python3.11/site-packages:/opt/mapt_helper/venv/lib64/python3.11/site-packages"
 
 # start the agent in the background (as a child process)
-python3 ${main_module}
+python3 ${main_module} &
 
 # save its process id
 child=$!
